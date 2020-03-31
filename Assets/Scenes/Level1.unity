@@ -3640,6 +3640,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2487079466286118210, guid: e8688979002b0984cbb38747f94bb3b0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72dff2276e3931b4887c8751579822b7,
+        type: 3}
     - target: {fileID: 7409464375245930611, guid: e8688979002b0984cbb38747f94bb3b0,
         type: 3}
       propertyPath: m_Enabled
@@ -3657,6 +3663,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8688979002b0984cbb38747f94bb3b0, type: 3}
+--- !u!1 &2487079465527079493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2487079466286118208, guid: e8688979002b0984cbb38747f94bb3b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2487079465527079492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2487079465527079494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2487079465707883307, guid: e8688979002b0984cbb38747f94bb3b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2487079465527079492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2487079465527079495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2487079465527079493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &2487079465527079496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2487079465527079494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &3207574436353523633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1008936524161568245, guid: e8688979002b0984cbb38747f94bb3b0,
