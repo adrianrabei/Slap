@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private SlapController player;
-    [SerializeField] private CoinSystem coinSystem;
     void Start()
     {
        
