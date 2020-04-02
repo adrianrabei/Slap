@@ -12,31 +12,20 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private CoinSystem coinSystem;
     [SerializeField] private Text levelTextUI, vsTextUI;
     [SerializeField] private Button nextLevelButton, retryLevelButton;
-    [SerializeField] private GameObject[] defaultEnemies, bonusEnemies;
 
     public static bool bonusLevel, wasReseted;
 
     protected override void Awake()
     {
         base.Awake();
-        int checkBonus = PlayerPrefs.GetInt(StringKeys.level, 1);
-        if ((checkBonus % 4) == 0)
-        {
-            bonusLevel = true;
-        }
-        else
-        {
-            bonusLevel = false;
-        }
     }
 
     void Start()
     {
-        nextLevelButton.onClick.AddListener(NextLevel);
+        //       nextLevelButton.onClick.AddListener(NextLevel);
         retryLevelButton.onClick.AddListener(RetryLevel);
 
         PlayerPrefs.GetInt(StringKeys.enemyIndex, 0);
-        
 
         if (bonusLevel)
         {
@@ -50,6 +39,10 @@ public class GameManager : Singleton<GameManager>
             vsTextUI.text = "VS";
             vsTextUI.fontSize = 100;
         }
+    }
+
+    void Update()
+    {
     }
 
     void FixedUpdate()
@@ -68,9 +61,6 @@ public class GameManager : Singleton<GameManager>
 
     private void NextLevel()
     {
-        int currLevel = 1+ PlayerPrefs.GetInt(StringKeys.level, 1);
-        PlayerPrefs.SetInt(StringKeys.level, currLevel);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void RetryLevel()
