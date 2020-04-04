@@ -10,24 +10,12 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject win;
     [SerializeField] private GameObject fail;
     [SerializeField] private CoinSystem coinSystem;
-    [SerializeField] private Text levelTextUI, vsTextUI;
+    [SerializeField] private Text levelTextUI;
     [SerializeField] private Button nextLevelButton, retryLevelButton;
-    [SerializeField] private GameObject[] defaultEnemies, bonusEnemies;
-
-    public static bool bonusLevel, wasReseted;
 
     protected override void Awake()
     {
         base.Awake();
-        int checkBonus = PlayerPrefs.GetInt(StringKeys.level, 1);
-        if ((checkBonus % 4) == 0)
-        {
-            bonusLevel = true;
-        }
-        else
-        {
-            bonusLevel = false;
-        }
     }
 
     void Start()
@@ -35,20 +23,14 @@ public class GameManager : Singleton<GameManager>
         nextLevelButton.onClick.AddListener(NextLevel);
         retryLevelButton.onClick.AddListener(RetryLevel);
 
-        PlayerPrefs.GetInt(StringKeys.enemyIndex, 0);
-        
+        Debug.Log(PlayerPrefs.GetInt(StringKeys.level));
 
-        if (bonusLevel)
+        levelTextUI.text = "LEVEL " + PlayerPrefs.GetInt(StringKeys.level, 1).ToString();
+        int curLVL = PlayerPrefs.GetInt(StringKeys.level, 1);
+        int curScene = SceneManager.GetActiveScene().buildIndex + 1;
+        if (curLVL != curScene)
         {
-            vsTextUI.fontSize = 60;
-            vsTextUI.text = "BONUS";
-            levelTextUI.text = "LEVEL";
-        }
-        else
-        {
-            levelTextUI.text = "LEVEL " + PlayerPrefs.GetInt(StringKeys.level, 1).ToString();
-            vsTextUI.text = "VS";
-            vsTextUI.fontSize = 100;
+            SceneManager.LoadScene(curLVL - 1);
         }
     }
 
@@ -68,9 +50,16 @@ public class GameManager : Singleton<GameManager>
 
     private void NextLevel()
     {
-        int currLevel = 1+ PlayerPrefs.GetInt(StringKeys.level, 1);
+        int currLevel = 1 + PlayerPrefs.GetInt(StringKeys.level, 1);
         PlayerPrefs.SetInt(StringKeys.level, currLevel);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (PlayerPrefs.GetInt(StringKeys.level, 1) % 50 == 0)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     private void RetryLevel()
@@ -81,7 +70,7 @@ public class GameManager : Singleton<GameManager>
 
     public void Vibration()
     {
-        if(PlayerPrefs.GetInt("vibro", 1) == 1)
+        if (PlayerPrefs.GetInt("vibro", 1) == 1)
         {
             Handheld.Vibrate();
         }
@@ -94,7 +83,7 @@ public class GameManager : Singleton<GameManager>
         win.SetActive(true);
         SoundManager.Instance.PlaySound("win");
         int winCoins = coinSystem.totalCoins + 25 * currentLevel;
-        PlayerPrefs.GetInt(StringKeys.totalCoins, winCoins);
+        PlayerPrefs.SetInt(StringKeys.totalCoins, winCoins);
     }
 
     public void Fail()

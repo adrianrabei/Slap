@@ -129,8 +129,6 @@ public class CoinSystem : MonoBehaviour
             healthManager.HealthEnemy.MyCurrentValue = 0;
             enemyHealth = 0;
             playerWin = true;
-            var nextLevel = 1 + PlayerPrefs.GetInt(StringKeys.level, 1);
-            PlayerPrefs.SetInt(StringKeys.level, nextLevel);
         }
         else
         {
@@ -145,7 +143,7 @@ public class CoinSystem : MonoBehaviour
 
     private void Initialization()
     {
-        totalCoins = PlayerPrefs.GetInt(StringKeys.totalCoins, 51);
+        totalCoins = PlayerPrefs.GetInt(StringKeys.totalCoins, 0);
         totalCoinsText.text = totalCoins.ToString();
 
         healthPrice = PlayerPrefs.GetInt(StringKeys.healthPrice, 25);
@@ -195,7 +193,7 @@ public class CoinSystem : MonoBehaviour
             PlayerPrefs.SetInt(StringKeys.totalCoins, totalCoins);
             playerPower += bonusPowerValue;
             PlayerPrefs.SetInt(StringKeys.playerMaxPower, playerPower);
-            bonusHealthValue += 1;
+            bonusPowerValue += 1;
             PlayerPrefs.SetInt(StringKeys.bonusPower, bonusPowerValue);
             powerPrice += 50;
             PlayerPrefs.SetInt(StringKeys.powerPrice, powerPrice);
