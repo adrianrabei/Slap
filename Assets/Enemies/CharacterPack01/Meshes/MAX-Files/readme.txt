@@ -1,1 +1,0 @@
-Version: 3ds max 2011
