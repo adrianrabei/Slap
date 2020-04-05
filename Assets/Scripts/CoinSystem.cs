@@ -39,6 +39,7 @@ public class CoinSystem : MonoBehaviour
 
     public bool playerWin, playerLoose;
 
+    private int enemyHP, playerHP;
     private void Awake()
     {
         Initialization();
@@ -52,9 +53,14 @@ public class CoinSystem : MonoBehaviour
         playerLoose = false;
 
         dmgPwr = 0;
+    }
+    
 
+    private void Start()
+    {
         currentLevel = PlayerPrefs.GetInt(StringKeys.level, 1);
         enemyHealth = Random.Range(6 * currentLevel + 95, 8 * currentLevel + 101);
+        enemyHP = enemyHealth;
         healthManager.HealthEnemy.MyMaxValue = enemyHealth;
         healthManager.HealthEnemy.MyCurrentValue = enemyHealth;
         enemyHealthText.text = enemyHealth.ToString();
@@ -62,8 +68,8 @@ public class CoinSystem : MonoBehaviour
 
     private void EnemyAttackPower()
     {
-        int lowestHit = 6 * currentLevel + 17;
-        int strongestHit = 7 * currentLevel + 21;
+        int lowestHit = 3 * currentLevel + 15;
+        int strongestHit = 4 * currentLevel + 19;
         enemyPower = Random.Range(lowestHit, strongestHit);
         dmgPwr = enemyPower;
         if (dmgPwr >= strongestHit - currentLevel * 1.5f)
@@ -98,7 +104,11 @@ public class CoinSystem : MonoBehaviour
 
     public void PlayerGetDamage()
     {
+        playerHP = PlayerPrefs.GetInt(StringKeys.playerMaxHealth, 100);
+        healthManager.HealthPlayer.MyMaxValue = playerHP;
+        healthManager.HealthPlayer.MyCurrentValue = playerHealth;
         EnemyAttackPower();
+        
         if (dmgPwr >= playerHealth)
         {
             playerHealth -= dmgPwr;
@@ -117,6 +127,8 @@ public class CoinSystem : MonoBehaviour
 
     public IEnumerator EnemyGetDamage()
     {
+        healthManager.HealthEnemy.MyMaxValue = enemyHP;
+        healthManager.HealthEnemy.MyCurrentValue = enemyHealth;
         var PlayerHit = (int) Math.Round(playerPower * hitPower.CheckHitPowerSection(), 0);
         if (hitPower.CheckHitPowerSection() == 1f)
         {
@@ -132,6 +144,8 @@ public class CoinSystem : MonoBehaviour
         }
         else
         {
+          //  Debug.Log(healthManager.HealthEnemy.MyMaxValue);
+          //  Debug.Log(healthManager.HealthEnemy.MyCurrentValue);
             playerPowerText.text = PlayerHit.ToString();
             enemyHealth -= PlayerHit;
             healthManager.HealthEnemy.MyCurrentValue = enemyHealth;

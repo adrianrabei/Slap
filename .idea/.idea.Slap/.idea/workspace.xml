@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7914902d-fba6-4d4a-b034-b0a0a480f59c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Slap/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Slap/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Slap/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Slap/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Slap/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Slap/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoinSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoinSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShipRotation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShipRotation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextRotate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +30,10 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SlapController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ShipRotation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CoinSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TextRotate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CoinSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -87,6 +82,7 @@
       <workItem from="1586045831967" duration="775000" />
       <workItem from="1586080363451" duration="739000" />
       <workItem from="1586081138650" duration="66000" />
+      <workItem from="1586092332498" duration="1757000" />
     </task>
     <servers />
   </component>

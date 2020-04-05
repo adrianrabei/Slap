@@ -16,6 +16,12 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
+        int curLVL = PlayerPrefs.GetInt(StringKeys.level, 1);
+        int curScene = SceneManager.GetActiveScene().buildIndex + 1;
+        if (curLVL != curScene)
+        {
+            SceneManager.LoadScene(curLVL - 1);
+        }
     }
 
     void Start()
@@ -26,12 +32,6 @@ public class GameManager : Singleton<GameManager>
         Debug.Log(PlayerPrefs.GetInt(StringKeys.level));
 
         levelTextUI.text = "LEVEL " + PlayerPrefs.GetInt(StringKeys.level, 1).ToString();
-        int curLVL = PlayerPrefs.GetInt(StringKeys.level, 1);
-        int curScene = SceneManager.GetActiveScene().buildIndex + 1;
-        if (curLVL != curScene)
-        {
-            SceneManager.LoadScene(curLVL - 1);
-        }
     }
 
     void FixedUpdate()
@@ -82,7 +82,7 @@ public class GameManager : Singleton<GameManager>
         game.SetActive(false);
         win.SetActive(true);
         SoundManager.Instance.PlaySound("win");
-        int winCoins = coinSystem.totalCoins + 25 * currentLevel;
+        int winCoins = coinSystem.totalCoins + 50 * currentLevel;
         PlayerPrefs.SetInt(StringKeys.totalCoins, winCoins);
     }
 
