@@ -54,7 +54,7 @@ public class CoinSystem : MonoBehaviour
         dmgPwr = 0;
 
         currentLevel = PlayerPrefs.GetInt(StringKeys.level, 1);
-        enemyHealth = Random.Range(5 * currentLevel + 95, 10 * currentLevel + 101);
+        enemyHealth = Random.Range(6 * currentLevel + 95, 8 * currentLevel + 101);
         healthManager.HealthEnemy.MyMaxValue = enemyHealth;
         healthManager.HealthEnemy.MyCurrentValue = enemyHealth;
         enemyHealthText.text = enemyHealth.ToString();
@@ -63,10 +63,10 @@ public class CoinSystem : MonoBehaviour
     private void EnemyAttackPower()
     {
         int lowestHit = 6 * currentLevel + 17;
-        int strongestHit = 9 * currentLevel + 21;
+        int strongestHit = 7 * currentLevel + 21;
         enemyPower = Random.Range(lowestHit, strongestHit);
         dmgPwr = enemyPower;
-        if (dmgPwr >= strongestHit - currentLevel * 2)
+        if (dmgPwr >= strongestHit - currentLevel * 1.5f)
         {
             SoundManager.Instance.PlaySound("wow");
         }

@@ -7,7 +7,6 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="csc.rsp" t="Include" />
         <e p="DOTween" t="Include">
           <e p="Modules" t="Include">
             <e p="DOTweenModuleAudio.cs" t="Include" />
@@ -18,7 +17,6 @@
             <e p="DOTweenModuleUnityVersion.cs" t="Include" />
             <e p="DOTweenModuleUtils.cs" t="Include" />
           </e>
-          <e p="readme.txt" t="Include" />
         </e>
         <e p="Enemies" t="Include">
           <e p="BasicBandit" t="Include">
@@ -29,9 +27,6 @@
               </e>
             </e>
           </e>
-          <e p="BodyGuards" t="Include">
-            <e p="ReadMe.txt.txt" t="Include" />
-          </e>
           <e p="Cartoon Heroes" t="Include">
             <e p="Scripts" t="Include">
               <e p="SetCharacter" t="Include">
@@ -41,22 +36,6 @@
                 <e p="SetCharacter.cs" t="Include" />
               </e>
             </e>
-          </e>
-          <e p="CharacterPack01" t="Include">
-            <e p="info.txt" t="Include" />
-            <e p="Meshes" t="Include">
-              <e p="MAX-Files" t="Include">
-                <e p="readme.txt" t="Include" />
-              </e>
-            </e>
-          </e>
-          <e p="CharacterPack02" t="Include">
-            <e p="info.txt" t="Include" />
-          </e>
-          <e p="Hyahhaa_GarekiTown_modelset" t="Include">
-            <e p="BTAStandard_Doubleside.shader" t="Include" />
-            <e p="hyahha-readme_eng.txt" t="Include" />
-            <e p="hyahha-readme_jp.txt" t="Include" />
           </e>
           <e p="ProWestern8CharactersPack" t="Include">
             <e p="Locomotion" t="Include">
